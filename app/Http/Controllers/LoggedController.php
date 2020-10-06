@@ -20,4 +20,19 @@ class LoggedController extends Controller
     return redirect() -> route('post-index');
 
   }
+
+  public function create() {
+
+    return view('post-create');
+
+  }
+
+  public function store(Request $request) {
+
+    $data = $request -> all();
+    $post = Post::create($data);
+
+    return redirect() -> route('post-index', $post -> id);
+  }
+
 }

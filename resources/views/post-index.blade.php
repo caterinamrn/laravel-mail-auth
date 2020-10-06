@@ -10,7 +10,7 @@
                 <div class="card-body">
                   @auth
                   <div class="spacearound">
-                    <a class='btn btn-primary' href="#">CREATE NEW POST</a>
+                    <a class='btn btn-primary' href="{{route('post-create')}}">CREATE NEW POST</a>
                   </div>
 
                   @endauth
