@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Post;
+
+use Illuminate\Http\Request;
+
 
 class LoggedController extends Controller
 {
@@ -33,6 +35,21 @@ class LoggedController extends Controller
     $post = Post::create($data);
 
     return redirect() -> route('post-index', $post -> id);
+  }
+
+  public function edit($id) {
+
+    $post = Post::findOrFail($id);
+    return view('post-edit',compact('post'));
+  }
+  public function update(Requested $request, $id) {
+
+    $data = $request -> all();
+    $post = Post::findOrFail($id);
+    $post -> update($data);
+
+    return redirect() -> route('post-index', $post -> id);
+
   }
 
 }

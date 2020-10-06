@@ -21,6 +21,7 @@
               @auth
               <a class='btn btn-primary' href="{{route('post-create')}}">CREATE NEW POST</a>
               <a class='btn btn-danger' href="{{route('post-delete', $post -> id)}}">DELETE</a>
+              <a class='btn btn-secondary' href="{{route('post-edit', $post -> id)}}">EDIT</a>
               @endauth
             </div>
 
