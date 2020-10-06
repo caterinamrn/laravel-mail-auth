@@ -20,7 +20,7 @@
             <div class="spacearound">
               @auth
               <a class='btn btn-primary' href="#">CREATE NEW POST</a>
-              <a class='btn btn-danger' href="#">DELETE</a>
+              <a class='btn btn-danger' href="{{route('post-delete', $post -> id)}}">DELETE</a>
               @endauth
             </div>
 
