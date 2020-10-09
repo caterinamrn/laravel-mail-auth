@@ -19,15 +19,16 @@ class LoggedController extends Controller
 
   public function delete($id) {
 
-    $post = Post::findOrFail($id);
-    $post -> delete();
+      $post = Post::findOrFail($id);
+      $post -> delete();
 
-    $user = Auth::user();
-    $action = 'delete';
+      $user = Auth::user();
+      $action = 'Delete';
 
-    Mail::to('admin@mail.it')->send(new UserAction($user,$post,$action));
+      Mail::to('admin@mail.com')
+            ->send(new UserAction($post,$user,$action));
 
-    return redirect() -> route('post-index');
+      return redirect() -> route('post-index');
 
   }
 

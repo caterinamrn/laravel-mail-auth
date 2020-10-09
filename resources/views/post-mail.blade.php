@@ -8,8 +8,8 @@
                 <div class="card-header"><h2>{{ $user -> name }}: {{$action}}</h2></div>
 
                 <div class="card-body">
-                    {{ $post -> title }}
-                    {{ $post -> content }}
+                  {{$post -> title}}:
+                  {{$post -> content}}
                     <div class="">
 
                     </div>

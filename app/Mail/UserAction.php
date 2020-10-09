@@ -11,19 +11,16 @@ class UserAction extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $post;
     public $user;
     public $action;
-    public $post;
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct($user,$action,$post)
+
+
+    public function __construct($post,$user,$action)
     {
-        $this -> user = $user;
-        $this -> action = $action;
-        $this -> post = $post;
+      $this -> user = $user;
+      $this -> action = $action;
+      $this -> post = $post;
     }
 
     /**
@@ -34,6 +31,6 @@ class UserAction extends Mailable
     public function build()
     {
         return $this -> from('account@gmail.com')
-                      ->view('post-mail');
+                     ->view('post-mail');
     }
 }
