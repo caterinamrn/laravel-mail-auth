@@ -49,8 +49,9 @@ class LoggedController extends Controller
 
     $post = Post::findOrFail($id);
     return view('post-edit',compact('post'));
+
   }
-  public function update(Requested $request, $id) {
+  public function update(Request $request, $id) {
 
     $data = $request -> all();
     $post = Post::findOrFail($id);
